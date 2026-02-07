@@ -60,3 +60,24 @@ Single-cycle architecture:
 
 ## 📂 Module Structure
 
+### Core CPU
+- SingleCycleCPU.v → Top-level processor, connects all components
+
+### Datapath Components
+- ALU.v → Arithmetic & logic operations
+- Shifter.v → Logical left shift (SLL)
+- RegFile.v → 32×32-bit register file
+- ResultMux.v → Write-back source selection
+
+### Control
+- ControlUnit.v → Control signal generation from opcode/funct fields
+- Extend.v → Immediate generator (I/S/B/J/U formats)
+
+### Memory
+- InstructionMemory.v → Program storage (preloaded instructions)
+- DataMemory.v → Load/store data memory
+
+### Test
+- SingleCycleCPU_tb.v → Simulation testbench
+
+
